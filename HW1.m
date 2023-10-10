@@ -11,4 +11,4 @@ b = RR_poly([-2 2 -5 5],1);
 
 [x,y] = RR_diophantine(a,b,f);
 
-f_final = trim(a*x + b*y);
+f_final = a*x + b*y;
