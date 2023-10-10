@@ -23,4 +23,4 @@ b2 = RR_poly([-2 2 -5 5],1);
 [x2,y2] = RR_diophantine(a2,b2,f2);
 
 f2_final = trim(a2*x2 + b2*y2);
-g2_final = trim(b2*y2);
+g2_final = trim(b2*y2); 
