@@ -2,7 +2,7 @@ function [Gz]= MC_C2D_matched(Gs,h,scaus)
 
     %   Description: This function uses the matched z-transform method to convert transfer function Gs (which is of class RR_tf)
     % to Gz (transfer function in z-domain) for a certain sample time h. 
-    % Default resulting Gz is semi-causal (proper), if want strictly causal Gz make scaus = true
+    % Default Gz, if appropriate, is semi-causal (proper), if want strictly causal Gz make scaus = true
     
     if (~exist('scaus', 'var'))
         scaus = false;
