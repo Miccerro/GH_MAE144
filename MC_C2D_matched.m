@@ -1,13 +1,12 @@
-function [Gz]= MC_C2D_matched(Gs,omega_bar,caus)
+function [Gz]= MC_C2D_matched(Gs,omega_bar,scaus)
 
-    % Description: 
+    % Description:
     % Default resulting Gz is semi causal (proper), if want strictly causal Gz make caus = 'strict'
     
-    if ~exist('caus','var')
-        % if caus does not exist, default it to null
-            caus = [];
+    if (~exist('scaus', 'var'))
+        scaus = false;
     end
-       
+
     % Step 1
     % Transforming zeros in s to z domain
     for i = 1:length(Gs.z)
@@ -26,12 +25,12 @@ function [Gz]= MC_C2D_matched(Gs,omega_bar,caus)
         for j = 1:length(inf_z)
             zz = [zz -1];
         end
-        if caus == 'strict'
+        if scaus == true    %If want strictly causal removes one infinite zero
             zz(end) = [];
         end
     end
 
-    Mz = RR_tf(zz,pz,k);  %Gz without the gain kz
+    Mz = RR_tf(zz,pz,1);  %Gz without the gain kz
     % Get gain for Gz
     kz = RR_evaluate(Gs,0)/RR_evaluate(Mz,1);
 
