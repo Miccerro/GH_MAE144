@@ -8,6 +8,10 @@ function [Gz]= MC_C2D_matched(Gs,h,scaus)
         scaus = false;
     end
 
+    if (~exist('h', 'var'))
+        h = 1;
+    end
+
     % Step 1
     % Transforming zeros in s to z domain
     for i = 1:length(Gs.z)
