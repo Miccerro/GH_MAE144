@@ -64,7 +64,7 @@ function [Gz]= MC_C2D_matched(Gs,omega_bar,caus)
 
     Mz = RR_tf(zz,pz,k);  %Gz without the gain kz
     % Get gain for Gz
-    kz = RR_evaluate(Gs,0)/RR_evaluate(Mz,1)
+    kz = RR_evaluate(Gs,0)/RR_evaluate(Mz,1);
 
     Gz = RR_tf(zz,pz,kz);
 
