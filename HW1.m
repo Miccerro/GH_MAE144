@@ -53,7 +53,7 @@ function [Gz]= MC_C2D_matched(Gs,omega_bar,scaus)
     
     % Adding appropriate infinite zeros to make Gz semi-causal or strictly causal (Steps 2 & 3)
     if inf_z > 0
-        for j = 1:length(inf_z)
+        for j = 1:inf_z
             zz = [zz -1];
         end
         if scaus == true    %If want strictly causal removes one infinite zero
