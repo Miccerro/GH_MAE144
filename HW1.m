@@ -29,15 +29,10 @@ D2 = y2/x2
 
 %% Problem 3
 
-function [Gz]= MC_C2D_matched(Gs,omega_bar,caus)
+function [Gz]= MC_C2D_matched(Gs,omega_bar,caus='L')
 
     % Description: 
     % Default resulting Gz is semi causal (proper), if want strictly causal Gz make caus = 'strict'
-    
-    if ~exist('caus','var')
-        % if caus does not exist, default it to null
-            caus = [];
-    end
        
     % Step 1
     % Transforming zeros in s to z domain
